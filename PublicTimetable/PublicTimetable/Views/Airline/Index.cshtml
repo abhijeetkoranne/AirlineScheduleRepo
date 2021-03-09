@@ -1,0 +1,71 @@
+﻿@model IEnumerable<PublicTimetable.Models.AirlineSchedule>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                FlightNumber
+            </th>
+            <th>
+               StartPeriodOfOperation
+            </th>
+            <th>
+               EndPeriodOfOperation
+            </th>
+            <th>
+               DaysOfOperation
+            </th>
+            <th>
+              DepartureTime
+            </th>
+            <th>
+              OriginStation
+            </th>
+            <th>
+               DestinationStation
+            </th>
+            <th>
+               Aircraft
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in ViewBag.airlineSchedule) {
+        <tr>
+            <td>
+                 @item.FlightNumber
+            </td>
+            <td>
+                @item.StartPeriodOfOperation
+            </td>
+            <td>
+                @item.EndPeriodOfOperation
+            </td>
+            <td>
+                @item.DaysOfOperation
+            </td>
+            <td>
+                @item.DepartureTime
+            </td>
+            <td>
+                @item.OriginStation
+            </td>
+            <td>
+                @item.DestinationStation
+            </td>
+            <td>
+                @item.Aircraft
+            </td>
+            
+        </tr>
+}
+    </tbody>
+</table>
